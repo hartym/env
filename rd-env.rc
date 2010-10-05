@@ -1,0 +1,6 @@
+#
+# This file contains space separated list of "profiles" you want the environment to take in account.
+#
+# Default should be okay, there should be only one line not starting by a sharp sign.
+#
+common

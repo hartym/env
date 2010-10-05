@@ -1,0 +1,71 @@
+#!/bin/bash
+
+#
+# Print script usage.
+#
+usage() {
+  echo "Usage: $0 <sources> <destination>"
+}
+
+
+#
+# @param  $SOURCES  symlink mirror sources, iterable bashly speaking (space separated, most likely).
+# @pre    Required
+# @pre    Directories must exist.
+#
+if [ "" == "$1" ]; then
+  usage
+  exit 1
+fi
+for i in $1; do
+  if [ ! -d $i ]; then
+    usage
+    echo "Sources must exist, and be readable."
+    exit 1
+  fi
+done
+SOURCES=$1
+
+
+#
+# @param $DEST symlink mirror destination
+# @pre    Required
+# @pre    Must not exist.
+# @pre    Must be writeable.
+#
+if [ "" == "$2" -o -e "$2" ]; then
+  usage
+  [ -e "$2" ] && echo "Destination must not exist."
+  exit 1
+fi
+DEST=$2
+mkdir $DEST
+if [ ! -d $DEST ]; then
+  usage
+  echo "Destination must be writeable."
+  exit 1
+fi
+
+#
+# @param  $SOURCE_RELATIVE_PREFIX  Path prefix to find source from destination.
+#
+SOURCE_RELATIVE_PREFIX=$3
+
+
+#
+# Script starts here.
+#
+for src in $SOURCES; do
+  # create directory structure
+  for dir in `(cd $src; find . -type d -not -path . -not -path \*.git\*)`; do
+    mkdir -p $DEST/`echo $dir | sed 's@^\./@@g'`
+  done
+
+  # create symlinks for profile
+  for file in `(cd $src; find . -type f -not -name .\* -not -path \*.git\*)`; do
+    file=`echo $file|sed 's@^\./@@g'`
+    ln -s $SOURCE_RELATIVE_PREFIX$src/$file $DEST/$file
+  done
+done
+
+

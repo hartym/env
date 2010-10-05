@@ -1,0 +1,9 @@
+[submodule "local/vim-snipmate"]
+	path = local/vim-snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "vendor/vim-snipmate"]
+	path = vendor/vim-snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "vendor/bin-git-utils"]
+	path = vendor/bin-git-utils
+	url = git://github.com/hartym/git-utils.git
