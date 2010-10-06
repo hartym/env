@@ -1,0 +1,5 @@
+if [ "" = "`which gvim`" ]; then
+  alias v="vi"
+else
+  alias v="gvim --remote-silent-tab"
+fi
