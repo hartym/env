@@ -1,6 +1,8 @@
 [ -z "$PS1" ] && return
 
-__PATH__=$(cd $(dirname "$0"); pwd)
+# We cannot use usual technique for $__PATH__, as $0 will be bash.
+[ -h ~/.bashrc ] && __FILE__="`readlink -e ~/.bashrc`" || __FILE__="~/.bashrc"
+__PATH__=$(cd $(dirname "$__FILE__"); pwd)
 
 if [ "`uname`" = "Darwin" ]; then
   _MAC=1
