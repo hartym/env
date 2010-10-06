@@ -7,15 +7,11 @@
 #                                                                             #
 ###############################################################################
 
-.PHONY: all clean gitsub install everything
+.PHONY: all clean submodules install everything update pull
 
-all: gitsub bin vim
+all: submodules bin vim
 everything: clean install
-
-gitsub:
-	@echo ">>> Fetching git submodules."
-	@git submodule init > /dev/null
-	@git submodule update > /dev/null
+update: pull submodules
 
 bin:
 	@echo ">>> Building local binary directory."
@@ -37,6 +33,15 @@ clean:
 	@echo ">>> Cleaning vim directory..."
 	@rm -rf vim vim.tmp
 	@echo ">>> Done."
+
+pull:
+	@echo ">>> Pulling master..."
+	@git pull git://github.com/hartym/env master
+
+submodules:
+	@echo ">>> Fetching git submodules."
+	@git submodule init > /dev/null
+	@git submodule update > /dev/null
 
 install: all
 	@echo ">>> Searching/destroying/replacing local user environment ..."
