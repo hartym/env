@@ -1,1 +1,3 @@
-alias sxcon='screen sudo /usr/sbin/xm console'
+if [ -x /usr/sbin/xm ]; then
+  alias sxcon='screen sudo /usr/sbin/xm console'
+fi
