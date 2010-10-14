@@ -1,0 +1,1 @@
+alias sxcon='screen sudo /usr/sbin/xm console'
