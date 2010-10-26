@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# This script tries to activate as much as possible of the environment, without
+# touching any file out of the environment dir.
+#
+# TODO This is not finished. I need some ninja moves.
+#
+
+__PATH__=$(cd $(dirname "$0"); pwd)
+__BASE_PATH__=$(cd "$__PATH__/../.."; pwd)
+
+export SCREENRC="$__BASE_PATH__/screenrc"
+export VIM="$__BASE_PATH__/vimrc"
+export VIMRUNTIME="$__BASE_PATH__/vim"
+bash --rcfile $__BASE_PATH__/bashrc
