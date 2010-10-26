@@ -27,7 +27,7 @@ vim:
 
 clean:
 	@echo ">>> Cleaning git submodules..."
-	@git submodule|awk '{print $2}'|xargs rm -rf
+	@for sub in `git submodule|awk '{print $2}'`; do rm -rf $sub; done
 	@echo ">>> Cleaning bin directory..."
 	@rm -rf bin
 	@echo ">>> Cleaning vim directory..."
