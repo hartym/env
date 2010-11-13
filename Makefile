@@ -15,7 +15,7 @@ update: pull submodules
 
 bin:
 	@echo ">>> Building local binary directory."
-	@local/bin/lntree "local/bin vendor/bin-git-utils" "bin" "../"
+	@local/bin/lntree "local/bin vendor/bin-git-utils vendor/bin-git-flow" "bin" "../"
 
 vim:
 	@echo ">>> Building .vim directory from vendor and local files."
@@ -41,7 +41,7 @@ pull:
 submodules:
 	@echo ">>> Fetching git submodules."
 	@git submodule init > /dev/null
-	@git submodule update > /dev/null
+	@git submodule update --recursive > /dev/null
 
 install: all
 	@echo ">>> Searching/destroying/replacing local user environment ..."

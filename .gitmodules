@@ -7,3 +7,6 @@
 [submodule "vendor/bin-git-utils"]
 	path = vendor/bin-git-utils
 	url = git://github.com/hartym/git-utils.git
+[submodule "vendor/bin-git-flow"]
+	path = vendor/bin-git-flow
+	url = git://github.com/trivoallan/gitflow.git
