@@ -1,12 +1,9 @@
-[submodule "local/vim-snipmate"]
-	path = local/vim-snipmate
-	url = git://github.com/msanders/snipmate.vim.git
-[submodule "vendor/vim-snipmate"]
-	path = vendor/vim-snipmate
-	url = git://github.com/msanders/snipmate.vim.git
-[submodule "vendor/bin-git-utils"]
-	path = vendor/bin-git-utils
-	url = git://github.com/hartym/git-utils.git
-[submodule "vendor/bin-git-flow"]
-	path = vendor/bin-git-flow
+[submodule "usr/share/git-flow/bin"]
+	path = usr/share/git-flow/bin
 	url = git://github.com/trivoallan/gitflow.git
+[submodule "usr/share/git-utils/bin"]
+	path = usr/share/git-utils/bin
+	url = git://github.com/hartym/git-utils.git
+[submodule "usr/share/vim/snipmate"]
+	path = usr/share/vim/snipmate
+	url = git://github.com/msanders/snipmate.vim.git

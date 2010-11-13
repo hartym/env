@@ -1,11 +1,11 @@
 #!/bin/bash
 
 __PATH__=$(cd $(dirname "$0"); pwd)
-__BASE_PATH__=$(cd "$__PATH__/../.."; pwd)
+__BASE_PATH__=$(cd "$__PATH__/../../.."; pwd)
 RCFILES="bashrc screenrc vim vimrc rd-env.rc"
 
 for f in $RCFILES; do
   rm -f ~/.$f
-  ln -s $__BASE_PATH__/$f ~/.$f
+  ln -s $__BASE_PATH__/etc/$f ~/.$f
 done
 

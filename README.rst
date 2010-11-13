@@ -17,3 +17,9 @@ Usage
 * ``make install``: will *DESTROY* your actual user's environment and put this
   one instead. *You've been warned.*
 
+Structure
+=========
+
+* ``aliases`` contains a bunch of aliases I find handy having everywhere. Some
+  can adapt to your current box by detecting whether or not something is
+  installed (for example, don't really need my xen dom0 aliases on my laptop).

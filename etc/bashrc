@@ -69,7 +69,7 @@ if [ -f ~/etc/bash_completion ]; then
   . ~/etc/bash_completion
 fi
 
-export PATH=$PATH:$__PATH__/bin
+export PATH=$PATH:$__PATH__/../build/bin
 export EDITOR=vim
 
 # Linux only: if system does not provides a RedHat like "service" binary, emulate it

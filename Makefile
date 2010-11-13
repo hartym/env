@@ -15,23 +15,21 @@ update: pull submodules
 
 bin:
 	@echo ">>> Building local binary directory."
-	@local/bin/lntree "local/bin vendor/bin-git-utils vendor/bin-git-flow" "bin" "../"
+	@usr/local/bin/lntree "usr/local/bin usr/share/git-utils/bin usr/share/git-flow/bin" "build/bin" "../../"
 
 vim:
 	@echo ">>> Building .vim directory from vendor and local files."
 	@rm -rf vim.tmp
-	@cp -ra local/vim vim.tmp
-	@cp -ra vendor/vim-snipmate/* vim.tmp/
-	@cp -ra local/vim-snipmate/* vim.tmp/
-	@mv vim.tmp vim
+	@cp -ra usr/local/vim/base vim.tmp
+	@cp -ra usr/share/vim/snipmate/* vim.tmp/
+	@cp -ra usr/local/vim/snipmate/* vim.tmp/
+	@mv vim.tmp build/vim
 
 clean:
 	@echo ">>> Cleaning git submodules..."
 	@for sub in `git submodule|awk '{print $2}'`; do rm -rf $sub; done
-	@echo ">>> Cleaning bin directory..."
-	@rm -rf bin
-	@echo ">>> Cleaning vim directory..."
-	@rm -rf vim vim.tmp
+	@echo ">>> Cleaning build directory..."
+	@rm -rf build
 	@echo ">>> Done."
 
 pull:
@@ -41,9 +39,9 @@ pull:
 submodules:
 	@echo ">>> Fetching git submodules."
 	@git submodule init > /dev/null
-	@git submodule update --recursive > /dev/null
+	@git submodule update --init --recursive > /dev/null
 
 install: all
 	@echo ">>> Searching/destroying/replacing local user environment ..."
-	@local/bin/install-rd-env
+	@usr/local/bin/install-rd-env
 

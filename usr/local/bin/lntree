@@ -39,7 +39,7 @@ if [ "" == "$2" -o -e "$2" ]; then
   exit 1
 fi
 DEST=$2
-mkdir $DEST
+mkdir -p $DEST
 if [ ! -d $DEST ]; then
   usage
   echo "Destination must be writeable."
