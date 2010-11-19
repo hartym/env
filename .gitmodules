@@ -7,3 +7,6 @@
 [submodule "usr/share/vim/snipmate"]
 	path = usr/share/vim/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
+[submodule "usr/share/vim/git"]
+	path = usr/share/vim/git
+	url = git://github.com/motemen/git-vim.git
