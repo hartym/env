@@ -38,8 +38,8 @@ set incsearch  " Incremental search
 set autowrite  " Automatically save before commands like :next and :make
 set hidden     " Hide buffers when they are abandoned
 set mouse=a    " Enable mouse usage (all modes) in terminals
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set number
 set hlsearch
@@ -67,7 +67,7 @@ set browsedir=buffer
 set autoread
 
 " always show the tabline...
-set showtabline=2
+set showtabline=4
 
 " The completion dictionary is provided by Rasmus:
 " http://lerdorf.com/funclist.txt
