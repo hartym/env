@@ -169,6 +169,7 @@ map <F5> :setlocal spell! spelllang=en_us<cr>
 
 filetype plugin on
 au BufRead,BufNewFile *.phps set filetype=php
+au BufRead *.html.j2 set filetype=htmljinja
 
 autocmd BufWritePre *.php :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
