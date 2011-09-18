@@ -1,0 +1,12 @@
+snippet %
+	{% ${1} %}${2}
+snippet {
+	{{ ${1} }}${2}
+snippet %if
+	{% if ${1:test}: %}${2}
+	{% endif %}
+snippet %for
+	{% for ${1:i} in ${2:iterator}: %}${3}
+	{% endfor %}
+snippet %el
+	{% else: %}${1}

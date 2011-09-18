@@ -1,0 +1,42 @@
+*customization: -color
+XTerm*termName:  xterm-256color
+
+XTerm*internalBorder:  1
+XTerm*highlightSelection:  true
+XTerm*VT100.eightBitInput:  true
+XTerm*VT100.eightBitOutput:  true
+XTerm*scrollBar: false
+XTerm*VT100.titeInhibit:  true
+
+XTerm*VT100.colorMode:  on
+XTerm*VT100.dynamicColors:  on
+
+XTerm*background: black
+XTerm*foreground: white
+
+XTerm*VT100.color0: #2E3436
+XTerm*VT100.color1: #CC0000
+XTerm*VT100.color2: #4E9A06
+XTerm*VT100.color3: #C4A000
+XTerm*VT100.color4: #3465A4
+XTerm*VT100.color5: #75507B
+XTerm*VT100.color6: #06989A
+XTerm*VT100.color7: #D3D7CF
+
+XTerm*VT100.color8: #555753
+XTerm*VT100.color9: #EF2929
+XTerm*VT100.color10: #8AE234
+XTerm*VT100.color11: #FCE94F
+XTerm*VT100.color12: #729FCF
+XTerm*VT100.color13: #AD7FA8
+XTerm*VT100.color14: #34E2E2
+XTerm*VT100.color15: #EEEEEC
+
+XTerm*CharClass: 33:48,37:48,45-47:48,64:48,126:48
+
+XTerm*VT100.cursorColor: lime green
+
+XTerm*utf8: 1
+
+XTerm*faceName: Inconsolata
+XTerm*faceSize: 13
