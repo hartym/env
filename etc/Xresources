@@ -37,6 +37,7 @@ XTerm*CharClass: 33:48,37:48,45-47:48,64:48,126:48
 XTerm*VT100.cursorColor: lime green
 
 XTerm*utf8: 1
+XTerm*iconPixmap: /usr/share/pixmaps/gnome-term-linux.png
 
 XTerm*faceName: Inconsolata
 XTerm*faceSize: 13
