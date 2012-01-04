@@ -253,3 +253,10 @@ colorscheme wombat
 
 :autocmd FileType mail :nmap <C-X>en :w<CR>:!aspell -e -c -l en %<CR>:e<CR>
 :autocmd FileType mail :nmap <C-X>fr :w<CR>:!aspell -e -c -l fr %<CR>:e<CR>
+
+" Include PHP-DOC
+
+source ~/.vim/php-doc.vim 
+inoremap <C-D><C-D> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-D><C-D> :call PhpDocSingle()<CR>
+vnoremap <C-D><C-D> :call PhpDocRange()<CR>

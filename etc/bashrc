@@ -100,3 +100,6 @@ if [ "$_MAC" = "1" -a -d /opt/local/bin/ ]; then
   fi
 fi
 
+setxkbmap fr
+
+

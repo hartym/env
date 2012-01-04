@@ -24,6 +24,7 @@ vim:
 	@cp -ra usr/share/vim/snipmate/* vim.tmp/
 	@cp -ra usr/share/vim/git/* vim.tmp/
 	@cp -ra usr/local/vim/snipmate/* vim.tmp/
+	@cp -ra usr/local/vim/phpdoc/* vim.tmp/
 	@mv vim.tmp build/vim
 
 clean:
