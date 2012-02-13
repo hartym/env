@@ -38,8 +38,8 @@ set incsearch  " Incremental search
 set autowrite  " Automatically save before commands like :next and :make
 set hidden     " Hide buffers when they are abandoned
 set mouse=a    " Enable mouse usage (all modes) in terminals
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set number
 set hlsearch
@@ -143,7 +143,7 @@ let g:netrw_liststyle = 3
 let g:VEConf_showHiddenFiles = 0
 
 " autocmd FileType php set keywordprg=~/etc/vim/getphpdoc
-autocmd FileType php set foldlevelstart=2
+" autocmd FileType php set foldlevelstart=2
 " autocmd FileType php let php_folding=1
 
 " ctags stuff
@@ -196,14 +196,14 @@ set laststatus=2
 set number
 
 " Enable folding by fold markers
-set foldmethod=indent
+" set foldmethod=indent
 
 " Autoclose folds, when moving out of them
 " set foldclose=""
 " set foldopen=insert,search,tag,mark,jump
-set foldnestmax=2
-set foldlevel=1
-set foldlevelstart=1
+" set foldnestmax=2
+" set foldlevel=1
+" set foldlevelstart=1
 " Use incremental searching
 ""set incsearch
 
