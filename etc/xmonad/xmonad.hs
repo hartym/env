@@ -101,10 +101,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
-
-    -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    , ((modm,               xK_p     ), spawn "synapse")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -266,7 +263,7 @@ main = do
         focusedBorderColor = myFocusedBorderColor,
 
       -- key bindings
-        keys               = azertyKeys <+> keys defaultConfig,
+        keys               = azertyKeys <+> myKeys <+> keys defaultConfig,
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
@@ -283,11 +280,11 @@ myLogHook h = dynamicLogWithPP $ customPP { ppOutput = hPutStrLn h }
 ---- Looks --
 ---- bar
 customPP :: PP
-customPP = defaultPP { 
-     			    ppHidden = xmobarColor "#00FF00" ""
-			  , ppCurrent = xmobarColor "#FF0000" "" . wrap "[" "]"
-			  , ppUrgent = xmobarColor "#FF0000" "" . wrap "*" "*"
-                          , ppLayout = xmobarColor "#FF0000" ""
-                          , ppTitle = xmobarColor "#00FF00" "" . shorten 80
-                          , ppSep = "<fc=#0033FF> | </fc>"
-                     }
+customPP = defaultPP {
+              ppHidden = xmobarColor "#00FF00" "",
+              ppCurrent = xmobarColor "#FF0000" "" . wrap "[" "]",
+              ppUrgent = xmobarColor "#FF0000" "" . wrap "*" "*",
+              ppLayout = xmobarColor "#FF0000" "",
+              ppTitle = xmobarColor "#00FF00" "" . shorten 80,
+              ppSep = "<fc=#0033FF> | </fc>"
+          }
