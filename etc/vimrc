@@ -226,7 +226,7 @@ set modeline
 
 set nocompatible
 
-set guifont=Monospace\ 11
+set guifont=Monospace\ 9
 
 :function! s:svnBlame()
    let line = line(".")
@@ -260,3 +260,16 @@ source ~/.vim/php-doc.vim
 inoremap <C-D><C-D> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-D><C-D> :call PhpDocSingle()<CR>
 vnoremap <C-D><C-D> :call PhpDocRange()<CR>
+
+" Indexer plugin
+
+let g:indexer_disableCtagsWarning=1
+let g:indexer_lookForProjectDir=0
+let g:indexer_ctagsJustAppendTagsAtFileSave=1
+let g:indexer_indexerListFilename=$VIMDIR."/indexer_files"
+let g:indexer_tagsDirname=$VIMDIR."/tags"
+let g:indexer_ctagsCommandLineOptions="-h '.php' -R --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP='/abstract class ([^ ]*)/\1/c/' --regex-PHP='/interface ([^ ]*)/\1/c/' --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' --exclude='*cache*'"
+
+imap <C-X><C-U> <C-O>:call PhpInsertUse()<CR>
+map <C-X><C-U> :call PhpInsertUse()<CR>
+
