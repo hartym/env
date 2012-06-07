@@ -20,6 +20,7 @@ import XMonad.Config.Azerty
 
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.SetWMName
 
 import XMonad.Layout
 import XMonad.Layout.NoBorders
@@ -27,6 +28,8 @@ import XMonad.Layout.ResizableTile
 
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
+
+
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -247,8 +250,7 @@ myEventHook = mempty
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
-
+myStartupHook = setWMName "LG3D"
 
 main = do
     myProc <- spawnPipe "xmobar"
