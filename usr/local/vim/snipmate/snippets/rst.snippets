@@ -1,0 +1,39 @@
+snippet h1
+	{% h1 %} ${1:Title}
+	==============
+
+snippet h2
+	{% h2 %} ${1:Title}
+	::::::::::::::
+
+snippet h3
+	{% h3 %} ${1:Title}
+	--------------
+
+snippet h4
+	{% h4 %} ${1:Title}
+	..............
+
+snippet toc
+	.. raw:: html
+
+	    <br /><br /><br /><br /><br /><br />
+
+	    <div class="title">
+	      ${1:title}
+	    <br /><br />
+	      ${2:subtitle}
+	    </div>
+
+	    <br /><br /><br /><br /><br /><br />
+
+	    <div>
+	      <div class="toc-title">
+	        ${3:Table des matières}
+	      </div>
+	      <pdf:toc />
+	    </div>
+
+	    <pdf:nextpage />
+	${4}
+

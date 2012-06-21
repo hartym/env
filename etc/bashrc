@@ -1,7 +1,10 @@
 [ -z "$PS1" ] && return
 
 # We cannot use usual technique for $__PATH__, as $0 will be bash.
-[ -h ~/.bashrc ] && __FILE__="`readlink -e ~/.bashrc`" || __FILE__="~/.bashrc"
+if [ -h ~/.bashrc ]; then
+  [ "$_MAC" = "0" ] && _opts="-e" || _opts=""
+  __FILE__="`readlink $_opts ~/.bashrc`" || __FILE__="~/.bashrc"
+fi
 __PATH__=$(cd $(dirname "$__FILE__"); pwd)
 
 if [ "`uname`" = "Darwin" ]; then
@@ -25,8 +28,11 @@ fi
 
 export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 if [ "`id -u`" = "0" ]; then
-    export PS1='\[\e[31;1m\]\h\[\e[m\]:\W\$ '
+  export PS1='\[\e[31;1m\]\h\[\e[m\]:\W\$ '
 fi
+
+_git_ps1=$__PATH__/../build/bin/git_prompt.sh
+which git > /dev/null && [ -f $_git_ps1 ] && source $_git_ps1
 
 if [ "$_MAC" = "0" ]; then
   case "$TERM" in
@@ -40,7 +46,7 @@ fi
 
 # All platforms: bash aliases
 for i in $__PATH__/aliases/*; do
-  . $i
+  source $i
 done
 
 # Linux only: enable color support of ls and also add handy aliases
@@ -87,6 +93,5 @@ if [ "$_MAC" = "1" -a -d /opt/local/bin/ ]; then
   fi
 fi
 
-setxkbmap fr
-
+[ "$_MAC" = "0" ] && which setxkbmap && setxkbmap fr
 

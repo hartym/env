@@ -1,3 +1,8 @@
-alias l='ls -lsah --color'
-alias ll='ls -lsh --color'
+if [ "$_MAC" = 0 ]; then
+  alias l='ls -lsah --color'
+  alias ll='ls -lsh --color'
+else
+  alias l='ls -lsahG'
+  alias ll='ls -lshG'
+fi
 alias ssu='sudo su -'

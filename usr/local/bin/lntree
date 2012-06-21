@@ -64,7 +64,7 @@ for src in $SOURCES; do
   # create symlinks for profile
   for file in `(cd $src; find . -type f -not -name .\* -not -path \*.git\*)`; do
     file=`echo $file|sed 's@^\./@@g'`
-    ln -s $SOURCE_RELATIVE_PREFIX$src/$file $DEST/$file
+    ln -fs $SOURCE_RELATIVE_PREFIX$src/$file $DEST/$file
   done
 done
 
