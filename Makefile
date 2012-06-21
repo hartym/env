@@ -54,3 +54,4 @@ install: all
 	@echo ">>> Searching/destroying/replacing local user environment ..."
 	@usr/local/bin/install-rd-env
 
+update: pull everything
