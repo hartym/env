@@ -38,8 +38,8 @@ set incsearch  " Incremental search
 set autowrite  " Automatically save before commands like :next and :make
 set hidden     " Hide buffers when they are abandoned
 set mouse=a    " Enable mouse usage (all modes) in terminals
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set number
 set hlsearch
@@ -143,7 +143,7 @@ let g:netrw_liststyle = 3
 let g:VEConf_showHiddenFiles = 0
 
 " autocmd FileType php set keywordprg=~/etc/vim/getphpdoc
-autocmd FileType php set foldlevelstart=2
+" autocmd FileType php set foldlevelstart=2
 " autocmd FileType php let php_folding=1
 
 " ctags stuff
@@ -196,14 +196,14 @@ set laststatus=2
 set number
 
 " Enable folding by fold markers
-set foldmethod=indent
+" set foldmethod=indent
 
 " Autoclose folds, when moving out of them
 " set foldclose=""
 " set foldopen=insert,search,tag,mark,jump
-set foldnestmax=2
-set foldlevel=1
-set foldlevelstart=1
+" set foldnestmax=2
+" set foldlevel=1
+" set foldlevelstart=1
 " Use incremental searching
 ""set incsearch
 
@@ -226,7 +226,7 @@ set modeline
 
 set nocompatible
 
-set guifont=Monospace\ 11
+set guifont=Monospace\ 9
 
 :function! s:svnBlame()
    let line = line(".")
@@ -253,3 +253,24 @@ colorscheme wombat
 
 :autocmd FileType mail :nmap <C-X>en :w<CR>:!aspell -e -c -l en %<CR>:e<CR>
 :autocmd FileType mail :nmap <C-X>fr :w<CR>:!aspell -e -c -l fr %<CR>:e<CR>
+
+" Include PHP-DOC
+
+source ~/.vim/php-doc.vim 
+inoremap <C-D><C-D> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-D><C-D> :call PhpDocSingle()<CR>
+vnoremap <C-D><C-D> :call PhpDocRange()<CR>
+
+" Indexer plugin
+
+let g:indexer_disableCtagsWarning=1
+let g:indexer_lookForProjectDir=0
+let g:indexer_ctagsJustAppendTagsAtFileSave=1
+let g:indexer_indexerListFilename=$VIMDIR."/indexer_files"
+let g:indexer_tagsDirname=$VIMDIR."/tags"
+let g:indexer_ctagsCommandLineOptions="-h '.php' -R --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP='/abstract class ([^ ]*)/\1/c/' --regex-PHP='/interface ([^ ]*)/\1/c/' --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' --exclude='*cache*'"
+
+imap <C-X><C-U> <C-O>:call PhpInsertUse()<CR>
+map <C-X><C-U> :call PhpInsertUse()<CR>
+
+map <C-X><C-F> <plug>NERDTreeTabsToggle<CR>

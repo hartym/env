@@ -19,3 +19,9 @@
 [submodule "usr/share/vim/sparkup"]
 	path = usr/share/vim/sparkup
 	url = https://github.com/rstacruz/sparkup.git
+[submodule "usr/share/vim/nerdtree"]
+	path = usr/share/vim/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "usr/share/vim/nerdtree-tabs"]
+	path = usr/share/vim/nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git

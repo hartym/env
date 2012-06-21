@@ -36,7 +36,8 @@ export PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\
 if [ "`id -u`" = "0" ]; then
     export PS1='\[\e[31;1m\]\h\[\e[m\]:\W\$ '
 fi
-export PS1='$(git-PS1)'$PS1
+
+which git-feature >/dev/null && export PS1='$(git-feature ps1)'$PS1
 
 if [ "$_MAC" = "0" ]; then
   case "$TERM" in
@@ -99,4 +100,7 @@ if [ "$_MAC" = "1" -a -d /opt/local/bin/ ]; then
     export MANPATH=/opt/local/share/man:$MANPATH
   fi
 fi
+
+setxkbmap fr
+
 
