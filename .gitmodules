@@ -13,3 +13,9 @@
 [submodule "usr/share/git-hg"]
 	path = usr/share/git-hg
 	url = https://github.com/offbytwo/git-hg.git
+[submodule "usr/share/vim/pdv"]
+	path = usr/share/vim/pdv
+	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
+[submodule "usr/share/vim/sparkup"]
+	path = usr/share/vim/sparkup
+	url = https://github.com/rstacruz/sparkup.git
