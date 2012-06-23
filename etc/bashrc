@@ -32,7 +32,8 @@ if [ "`id -u`" = "0" ]; then
 fi
 
 _git_ps1=$__PATH__/../build/bin/git_prompt.sh
-which git > /dev/null && [ -f $_git_ps1 ] && source $_git_ps1
+echo $_git_ps1
+which git > /dev/null && [ -e $_git_ps1 ] && source $_git_ps1
 
 if [ "$_MAC" = "0" ]; then
   case "$TERM" in
