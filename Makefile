@@ -2,15 +2,13 @@
 #                                                                             #
 # Romain Dorgueil's environment Makefile.                                     #
 #                                                                             #
-# make clean && make will get you a useable working copy.                     #
-# make everything (HARMFULL) will destroy and replace current user's env.     #
+# make (HARMFULL) will destroy and replace current user's env.                #
 #                                                                             #
 ###############################################################################
 
-.PHONY: all clean submodules install everything update pull
+.PHONY: all clean submodules install update pull
 
-all: submodules bin vim
-everything: clean install
+all: clean install
 update: pull submodules
 
 bin:
@@ -33,6 +31,7 @@ vim:
 	@echo "  > Adding local extensions to vim"
 	@cp -Ra usr/local/vim/snipmate/* vim.tmp/
 	@cp -Ra usr/local/vim/phpdoc/* vim.tmp/
+	@cp -Ra usr/local/vim/jinja/* vim.tmp/
 	@mv vim.tmp build/vim
 
 clean:
@@ -51,7 +50,7 @@ submodules:
 	@git submodule init > /dev/null
 	@git submodule update --init --recursive > /dev/null
 
-install: all
+install:
 	@echo ">>> Searching/destroying/replacing local user environment ..."
 	@usr/local/bin/install-rd-env
 
