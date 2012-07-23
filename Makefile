@@ -50,8 +50,8 @@ submodules:
 	@git submodule init > /dev/null
 	@git submodule update --init --recursive > /dev/null
 
-install:
+install: update submodules bin vim
 	@echo ">>> Searching/destroying/replacing local user environment ..."
 	@usr/local/bin/install-rd-env
 
-update: pull everything
+update: pull 
