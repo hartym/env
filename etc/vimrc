@@ -273,6 +273,7 @@ let g:indexer_ctagsCommandLineOptions="-h '.php' -R --totals=yes --tag-relative=
 imap <C-X><C-U> <C-O>:call PhpInsertUse()<CR>
 map <C-X><C-U> :call PhpInsertUse()<CR>
 
+" Nerd Tree needs some help
 map <C-X><C-F> <plug>NERDTreeTabsToggle<CR>
-
 let g:NERDTreeDirArrows=0
+let NERDTreeIgnore = ['\.pyc$']
