@@ -274,3 +274,5 @@ imap <C-X><C-U> <C-O>:call PhpInsertUse()<CR>
 map <C-X><C-U> :call PhpInsertUse()<CR>
 
 map <C-X><C-F> <plug>NERDTreeTabsToggle<CR>
+
+let g:NERDTreeDirArrows=0
