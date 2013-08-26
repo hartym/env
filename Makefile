@@ -27,7 +27,7 @@ vim:
 	@cp -Ra usr/share/vim/pdv/* vim.tmp/
 	@cp -Ra usr/share/vim/sparkup/vim/* vim.tmp/
 	@cp -Ra usr/share/vim/vcscommand/* vim.tmp/
-	@cp -Ra usr/share/vim/zencoding/* vim.tmp/
+	#@cp -Ra usr/share/vim/zencoding/* vim.tmp/
 	@echo "  > Adding local extensions to vim"
 	@cp -Ra usr/local/vim/snipmate/* vim.tmp/
 	@cp -Ra usr/local/vim/phpdoc/* vim.tmp/
