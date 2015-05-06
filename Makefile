@@ -17,33 +17,31 @@ bin:
 
 vim:
 	@echo ">>> Building .vim directory from vendor and local files."
-	@rm -rf vim.tmp
-	@cp -Ra usr/local/vim/base vim.tmp
+	rm -rf vim.tmp
+	cp -Ra usr/local/vim/base vim.tmp
 	@echo "  > Compiling shared vim extensions"
-	@cp -Ra usr/share/vim/git/* vim.tmp/
-	@cp -Ra usr/share/vim/snipmate/* vim.tmp/
-	@cp -Ra usr/share/vim/nerdtree/* vim.tmp/
-	@cp -Ra usr/share/vim/nerdtree-tabs/* vim.tmp/
-	@cp -Ra usr/share/vim/pdv/* vim.tmp/
-	@cp -Ra usr/share/vim/sparkup/vim/* vim.tmp/
-	@cp -Ra usr/share/vim/vcscommand/* vim.tmp/
-	#@cp -Ra usr/share/vim/zencoding/* vim.tmp/
+	cp -Ra usr/share/vim/git/* vim.tmp/
+	cp -Ra usr/share/vim/snipmate/* vim.tmp/
+	cp -Ra usr/share/vim/nerdtree/* vim.tmp/
+	cp -Ra usr/share/vim/nerdtree-tabs/* vim.tmp/
+	cp -Ra usr/share/vim/pdv/* vim.tmp/
+	cp -Ra usr/share/vim/sparkup/vim/* vim.tmp/
 	@echo "  > Adding local extensions to vim"
-	@cp -Ra usr/local/vim/snipmate/* vim.tmp/
-	@cp -Ra usr/local/vim/phpdoc/* vim.tmp/
-	@cp -Ra usr/local/vim/jinja/* vim.tmp/
-	@mv vim.tmp build/vim
+	cp -Ra usr/local/vim/snipmate/* vim.tmp/
+	cp -Ra usr/local/vim/phpdoc/* vim.tmp/
+	cp -Ra usr/local/vim/jinja/* vim.tmp/
+	mv vim.tmp build/vim
 
 clean:
 	@echo ">>> Cleaning git submodules..."
 	@for sub in `git submodule|awk '{print $2}'`; do rm -rf $sub; done
 	@echo ">>> Cleaning build directory..."
-	@rm -rf build
+	rm -rf build
 	@echo ">>> Done."
 
 pull:
 	@echo ">>> Pulling master..."
-	@git pull git://github.com/hartym/env master
+	git pull origin master
 
 submodules:
 	@echo ">>> Fetching git submodules."
