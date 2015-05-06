@@ -1,6 +1,3 @@
-[submodule "usr/share/git-flow/bin"]
-	path = usr/share/git-flow/bin
-	url = https://github.com/trivoallan/gitflow.git
 [submodule "usr/share/git-utils/bin"]
 	path = usr/share/git-utils/bin
 	url = https://github.com/hartym/git-utils.git
