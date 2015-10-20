@@ -31,9 +31,6 @@ if [ "`id -u`" = "0" ]; then
   export PS1='\[\e[31;1m\]\h\[\e[m\]:\W\$ '
 fi
 
-_git_ps1=$__PATH__/../build/bin/git_prompt.sh
-which git > /dev/null && [ -f $_git_ps1 ] && source $_git_ps1
-
 if [ "$_MAC" = "0" ]; then
   case "$TERM" in
   xterm*|rxvt*)
@@ -93,7 +90,16 @@ if [ "$_MAC" = "1" -a -d /opt/local/bin/ ]; then
   fi
 fi
 
-[ "$_MAC" = "0" ] && which setxkbmap && setxkbmap fr
+# [ "$_MAC" = "0" ] && which setxkbmap && setxkbmap fr
+
+_git_ps1=$__PATH__/../build/bin/git_prompt.sh
+which git > /dev/null && [ -e $_git_ps1 ] && source $_git_ps1
+
+if which brew > /dev/null; then
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+      . `brew --prefix`/etc/bash_completion
+  fi
+fi
 
 source $__PATH__/../build/bin/z.sh
 
