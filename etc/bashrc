@@ -95,3 +95,5 @@ fi
 
 [ "$_MAC" = "0" ] && which setxkbmap && setxkbmap fr
 
+source $__PATH__/../build/bin/z.sh
+

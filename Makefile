@@ -16,11 +16,11 @@ update: pull submodules
 bin:
 	@echo ">>> Building local binary directory."
 	@rm -rf build/bin
-	@usr/local/bin/lntree "usr/local/bin usr/share/git-utils/bin usr/share/git-flow/bin usr/share/git-hg/bin usr/share/git-ps1" "build/bin" "../../"
+	@usr/local/bin/lntree "usr/local/bin usr/share/git-utils/bin usr/share/git-flow/bin usr/share/git-hg/bin usr/share/git-ps1 usr/share/z" "build/bin" "../../"
 
 vim:
 	@echo ">>> Building .vim directory from vendor and local files."
-	@rm -rf vim.tmp
+	@rm -rf vim.tmp build/vim
 	@cp -Ra usr/local/vim/base vim.tmp
 	@echo "  > Compiling shared vim extensions"
 	@cp -Ra usr/share/vim/git/* vim.tmp/
