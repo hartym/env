@@ -69,11 +69,6 @@ set autoread
 " always show the tabline...
 set showtabline=4
 
-" The completion dictionary is provided by Rasmus:
-" http://lerdorf.com/funclist.txt
-set dictionary+=~/.vim/php-func.lst
-set complete-=k complete+=k
-
 " Automatically reload .vimrc when changing
 autocmd! bufwritepost .vimrc source %
 
@@ -111,7 +106,6 @@ nnoremap <silent> <C-X><RIGHT> <C-W>l
 nnoremap <silent> <C-X><UP> <C-W>k
 nnoremap <silent> <C-X><DOWN> <C-W>j
 nnoremap <silent> <F3> :split<CR>
-nnoremap <C-X><C-B> :!php -l %<CR>
 nnoremap <silent> <C-Q> :silent noh<CR>
 inoremap (); ();
 inoremap (), (),
@@ -142,10 +136,6 @@ hi Constant term=underline ctermfg=DarkBlue gui=NONE guifg=DarkGreen
 let g:netrw_liststyle = 3
 let g:VEConf_showHiddenFiles = 0
 
-" autocmd FileType php set keywordprg=~/etc/vim/getphpdoc
-" autocmd FileType php set foldlevelstart=2
-" autocmd FileType php let php_folding=1
-
 " ctags stuff
 let g:ctags_path='/usr/bin/ctags'
 let g:ctags_args='-I __declspec+'
@@ -155,20 +145,10 @@ let generate_tags=1
 
 " source ~/etc/vim/ctags.vim
 
-" au Filetype html,php let g:closetag_html_style=1
-" au Filetype html,xml,xsl,php source ~/.vim/scripts/closetag.vim
-
 " Map <F5> to turn spelling on (VIM 7.0+)
 map <F5> :setlocal spell! spelllang=en_us<cr>
 
-" Highlight current line in insert mode.
-"autocmd InsertLeave * se nocul
-"autocmd InsertEnter * se cul
-"
-" {{{ .phps filesall handled like .php
-
 filetype plugin on
-au BufRead,BufNewFile *.phps set filetype=php
 au BufRead *.html.j2 set filetype=htmljinja
 
 autocmd BufWritePre *.php :%s/\s\+$//e
@@ -181,8 +161,6 @@ autocmd BufWritePre *.yml :%s/\s\+$//e
 " }}}
 
 " {{{  Settings
-
-" Use filetype plugins, e.g. for PHP
 
 " Show nice info in ruler
 set ruler
@@ -254,13 +232,6 @@ colorscheme wombat
 :autocmd FileType mail :nmap <C-X>en :w<CR>:!aspell -e -c -l en %<CR>:e<CR>
 :autocmd FileType mail :nmap <C-X>fr :w<CR>:!aspell -e -c -l fr %<CR>:e<CR>
 
-" Include PHP-DOC
-
-source ~/.vim/php-doc.vim 
-inoremap <C-D><C-D> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-D><C-D> :call PhpDocSingle()<CR>
-vnoremap <C-D><C-D> :call PhpDocRange()<CR>
-
 " Indexer plugin
 
 let g:indexer_disableCtagsWarning=1
@@ -269,8 +240,5 @@ let g:indexer_ctagsJustAppendTagsAtFileSave=1
 let g:indexer_indexerListFilename=$VIMDIR."/indexer_files"
 let g:indexer_tagsDirname=$VIMDIR."/tags"
 let g:indexer_ctagsCommandLineOptions="-h '.php' -R --totals=yes --tag-relative=yes --PHP-kinds=+cf --regex-PHP='/abstract class ([^ ]*)/\1/c/' --regex-PHP='/interface ([^ ]*)/\1/c/' --regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)/\2/f/' --exclude='*cache*'"
-
-imap <C-X><C-U> <C-O>:call PhpInsertUse()<CR>
-map <C-X><C-U> :call PhpInsertUse()<CR>
 
 map <C-X><C-F> <plug>NERDTreeTabsToggle<CR>

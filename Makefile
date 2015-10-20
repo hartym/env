@@ -15,6 +15,7 @@ update: pull submodules
 
 bin:
 	@echo ">>> Building local binary directory."
+	@rm -rf build/bin
 	@usr/local/bin/lntree "usr/local/bin usr/share/git-utils/bin usr/share/git-flow/bin usr/share/git-hg/bin usr/share/git-ps1" "build/bin" "../../"
 
 vim:
@@ -26,9 +27,7 @@ vim:
 	@cp -Ra usr/share/vim/snipmate/* vim.tmp/
 	@cp -Ra usr/share/vim/nerdtree/* vim.tmp/
 	@cp -Ra usr/share/vim/nerdtree-tabs/* vim.tmp/
-	@cp -Ra usr/share/vim/pdv/* vim.tmp/
 	@cp -Ra usr/share/vim/sparkup/* vim.tmp/
-	@cp -Ra usr/share/vim/vcscommand/* vim.tmp/
 	@echo "  > Adding local extensions to vim"
 	@cp -Ra usr/local/vim/snipmate/* vim.tmp/
 	@cp -Ra usr/local/vim/phpdoc/* vim.tmp/
