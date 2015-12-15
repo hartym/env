@@ -22,9 +22,6 @@
 [submodule "usr/share/git-ps1"]
 	path = usr/share/git-ps1
 	url = https://github.com/hartym/git-ps1
-[submodule "usr/share/vim/zencoding"]
-	path = usr/share/vim/zencoding
-	url = https://github.com/mattn/zencoding-vim.git
 [submodule "usr/share/vim/puppet-syntax"]
 	path = usr/share/vim/puppet-syntax
 	url = git@github.com:puppetlabs/puppet-syntax-vim.git
