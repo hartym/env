@@ -25,9 +25,6 @@
 [submodule "usr/share/vim/puppet-syntax"]
 	path = usr/share/vim/puppet-syntax
 	url = git@github.com:puppetlabs/puppet-syntax-vim.git
-[submodule "usr/share/vim/golang"]
-	path = usr/share/vim/golang
-	url = git@github.com:jnwhiteh/vim-golang.git
 [submodule "usr/share/z"]
 	path = usr/share/z
 	url = https://github.com/rupa/z.git
