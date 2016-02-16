@@ -1,21 +1,15 @@
-[submodule "usr/share/git-flow/bin"]
-	path = usr/share/git-flow/bin
-	url = git://github.com/trivoallan/gitflow.git
 [submodule "usr/share/git-utils/bin"]
 	path = usr/share/git-utils/bin
-	url = git://github.com/hartym/git-utils.git
+	url = https://github.com/hartym/git-utils.git
 [submodule "usr/share/vim/snipmate"]
 	path = usr/share/vim/snipmate
-	url = git://github.com/msanders/snipmate.vim.git
+	url = https://github.com/msanders/snipmate.vim.git
 [submodule "usr/share/vim/git"]
 	path = usr/share/vim/git
-	url = git://github.com/motemen/git-vim.git
+	url = https://github.com/motemen/git-vim.git
 [submodule "usr/share/git-hg"]
 	path = usr/share/git-hg
 	url = https://github.com/offbytwo/git-hg.git
-[submodule "usr/share/vim/pdv"]
-	path = usr/share/vim/pdv
-	url = https://github.com/vim-scripts/PDV--phpDocumentor-for-Vim.git
 [submodule "usr/share/vim/sparkup"]
 	path = usr/share/vim/sparkup
 	url = https://github.com/rstacruz/sparkup.git
@@ -25,9 +19,6 @@
 [submodule "usr/share/vim/nerdtree-tabs"]
 	path = usr/share/vim/nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs.git
-[submodule "usr/share/vim/vcscommand"]
-	path = usr/share/vim/vcscommand
-	url = git://repo.or.cz/vcscommand
 [submodule "usr/share/git-ps1"]
 	path = usr/share/git-ps1
 	url = https://github.com/hartym/git-ps1
