@@ -101,3 +101,25 @@ if which brew > /dev/null; then
   fi
 fi
 
+alias s="open -a 'Sublime Text'"
+alias nb="ipython notebook"
+alias nbconv="ipython nbconvert"
+ 
+export GOPATH=~/gocode
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export NVM_DIR="/Users/rd/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+export WORKON_HOME=$HOME/.envs
+export PROJECT_HOME=$HOME/Sites
+source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+#THIS MUST BE AT THE END OF THE FILE FOR JENV TO WORK!!!
+[[ -s "/Users/rd/.jenv/bin/jenv-init.sh" ]] && source "/Users/rd/.jenv/bin/jenv-init.sh" && source "/Users/rd/.jenv/commands/completion.sh"
+

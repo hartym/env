@@ -38,13 +38,13 @@ set incsearch  " Incremental search
 set autowrite  " Automatically save before commands like :next and :make
 set hidden     " Hide buffers when they are abandoned
 set mouse=a    " Enable mouse usage (all modes) in terminals
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set number
 set hlsearch
 set scrolljump=4
-set scrolloff=2
+set scrolloff=4
 
 " this will show tabs and trailing spaces
 set list
@@ -249,17 +249,9 @@ set guifont=Monospace\ 9
 ":map! gb :call <SID>svnBlame()<CR>
 :command! Blame call s:svnBlame()
 
-colorscheme wombat
 
 :autocmd FileType mail :nmap <C-X>en :w<CR>:!aspell -e -c -l en %<CR>:e<CR>
 :autocmd FileType mail :nmap <C-X>fr :w<CR>:!aspell -e -c -l fr %<CR>:e<CR>
-
-" Include PHP-DOC
-
-source ~/.vim/php-doc.vim 
-inoremap <C-D><C-D> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-D><C-D> :call PhpDocSingle()<CR>
-vnoremap <C-D><C-D> :call PhpDocRange()<CR>
 
 " Indexer plugin
 

@@ -31,3 +31,6 @@
 [submodule "usr/share/git-ps1"]
 	path = usr/share/git-ps1
 	url = https://github.com/hartym/git-ps1
+[submodule "usr/share/z"]
+	path = usr/share/z
+	url = https://github.com/rupa/z.git
