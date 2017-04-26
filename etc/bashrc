@@ -108,15 +108,10 @@ export NVM_DIR="/Users/rd/.nvm"
 
 export WORKON_HOME=$HOME/.envs
 export PROJECT_HOME=$HOME/Sites
-source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
 
 source $__PATH__/../build/bin/z.sh
 
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
-#THIS MUST BE AT THE END OF THE FILE FOR JENV TO WORK!!!
-[[ -s "/Users/rd/.jenv/bin/jenv-init.sh" ]] && source "/Users/rd/.jenv/bin/jenv-init.sh" && source "/Users/rd/.jenv/commands/completion.sh"
 

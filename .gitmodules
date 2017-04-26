@@ -25,3 +25,6 @@
 [submodule "usr/share/z"]
 	path = usr/share/z
 	url = https://github.com/rupa/z.git
+[submodule "usr/share/powerline"]
+	path = usr/share/powerline
+	url = https://github.com/powerline/powerline

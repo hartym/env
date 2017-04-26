@@ -1,0 +1,1 @@
+alias gpo='git fetch; git pull origin'
