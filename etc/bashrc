@@ -1,5 +1,11 @@
 [ -z "$PS1" ] && return
 
+export NVM_DIR="/Users/rd/.nvm"
+export WORKON_HOME=$HOME/.envs
+export PROJECT_HOME=$HOME/Work
+export HISTCONTROL=ignoredups
+export HISTCONTROL=ignoreboth
+
 # We cannot use usual technique for $__PATH__, as $0 will be bash.
 if [ -h ~/.bashrc ]; then
   [ "$_MAC" = "0" ] && _opts="-e" || _opts=""
@@ -12,9 +18,6 @@ if [ "`uname`" = "Darwin" ]; then
 else
   _MAC=0
 fi
-
-export HISTCONTROL=ignoredups
-export HISTCONTROL=ignoreboth
 
 if [ "$_MAC" = "1" ]; then
   shopt -s checkwinsize
@@ -102,18 +105,16 @@ if which brew > /dev/null; then
 fi
 
 export GOPATH=~/gocode
-
+export WORKON_HOME=$HOME/.envs
+export PROJECT_HOME=$HOME/Sites
 export NVM_DIR="/Users/rd/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export WORKON_HOME=$HOME/.envs
-export PROJECT_HOME=$HOME/Sites
-
 source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
-
 source $__PATH__/../build/bin/z.sh
 
-
-
+if which virtualenvwrapper_lazy.sh > /dev/null; then
+  source $(which virtualenvwrapper_lazy.sh)
+fi
 
 export PATH="$HOME/.yarn/bin:$PATH"
