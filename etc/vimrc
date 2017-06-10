@@ -198,7 +198,11 @@ set scrolloff=3
 set backspace=start,eol,indent
 
 " Allow file inline modelines to provide settings
+set modelines=1
 set modeline
+
+set colorcolumn=120
+highlight ColorColumn ctermbg=black
 
 " }}}
 
