@@ -7,9 +7,6 @@
 [submodule "usr/share/vim/git"]
 	path = usr/share/vim/git
 	url = https://github.com/motemen/git-vim.git
-[submodule "usr/share/git-hg"]
-	path = usr/share/git-hg
-	url = https://github.com/offbytwo/git-hg.git
 [submodule "usr/share/vim/sparkup"]
 	path = usr/share/vim/sparkup
 	url = https://github.com/rstacruz/sparkup.git
